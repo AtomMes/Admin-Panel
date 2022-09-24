@@ -74,7 +74,7 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           {Sections.map((section, id) => (
-            <>
+            <React.Fragment key={id}>
               {section.text === "Dashboard" && <p className="title">Main</p>}
               {section.text === "Users" && <p className="title">Lists</p>}
               {section.text === "Status" && <p className="title">Useful</p>}
@@ -86,7 +86,7 @@ const Sidebar = () => {
                 {section.icon}
                 <span>{section.text}</span>
               </li>
-            </>
+            </React.Fragment>
           ))}
           {/* <p className="title">Main</p>
           <li>
