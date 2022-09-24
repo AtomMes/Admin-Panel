@@ -1,16 +1,22 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import Widget from "../../components/widget/Widget";
 import "./home.scss";
 
 const Home = () => {
   return (
-    <div className='home'>
+    <div className="home">
       <Sidebar />
-      <div className='homeContainer'>
+      <div className="homeContainer">
         <Navbar />
-        home container
+        <div className="widgets">
+          <Widget type='user'/>
+          <Widget type='order'/>
+          <Widget type='earnings'/>
+          <Widget type='balance'/>
         </div>
+      </div>
     </div>
   );
 };
