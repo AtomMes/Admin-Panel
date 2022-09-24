@@ -13,16 +13,82 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
+const Sections = [
+  {
+    icon: <DashboardIcon className="icon" />,
+    text: "Dashboard",
+  },
+  {
+    icon: <PersonOutlineIcon className="icon" />,
+    text: "Users",
+  },
+  {
+    icon: <LocalShippingIcon className="icon" />,
+    text: "Products",
+  },
+  {
+    icon: <CreditCardIcon className="icon" />,
+    text: "Orders",
+  },
+  {
+    icon: <StoreIcon className="icon" />,
+    text: "Delivery",
+  },
+  {
+    icon: <InsertChartIcon className="icon" />,
+    text: "Status",
+  },
+  {
+    icon: <SettingsApplicationsIcon className="icon" />,
+    text: "Notifications",
+  },
+  {
+    icon: <ExitToAppIcon className="icon" />,
+    text: "System Health",
+  },
+  {
+    icon: <NotificationsNoneIcon className="icon" />,
+    text: "Logs",
+  },
+  {
+    icon: <SettingsSystemDaydreamOutlinedIcon className="icon" />,
+    text: "Settings",
+  },
+  {
+    icon: <PsychologyOutlinedIcon className="icon" />,
+    text: "Profile",
+  },
+  {
+    icon: <AccountCircleOutlinedIcon className="icon" />,
+    text: "Logout",
+  },
+];
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">ATOM</span>
+        <span className="logo">Admin Panel</span>
       </div>
       <hr />
       <div className="center">
         <ul>
-          <p className="title">Main</p>
+          {Sections.map((section, id) => (
+            <>
+              {section.text === "Dashboard" && <p className="title">Main</p>}
+              {section.text === "Users" && <p className="title">Lists</p>}
+              {section.text === "Status" && <p className="title">Useful</p>}
+              {section.text === "System Health" && (
+                <p className="title">Service</p>
+              )}
+              {section.text === "Profile" && <p className="title">User</p>}
+              <li>
+                {section.icon}
+                <span>{section.text}</span>
+              </li>
+            </>
+          ))}
+          {/* <p className="title">Main</p>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
@@ -74,7 +140,7 @@ const Sidebar = () => {
           <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Logout</span>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="bottom">
